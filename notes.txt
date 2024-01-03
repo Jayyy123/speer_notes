@@ -1,0 +1,44 @@
+# Install Express, a web application framework for Node.js
+npm install express
+
+# Install body-parser for parsing incoming request bodies
+npm install body-parser
+
+# Install cors to enable Cross-Origin Resource Sharing
+npm install cors
+
+# Install Sequelize as the ORM (Object-Relational Mapping) for your database
+npm install sequelize
+
+# Install the Sequelize CLI to use the command-line interface for database tasks
+npm install sequelize-cli
+
+# Install the PostgreSQL dialect for Sequelize (you can choose another dialect if using a different database)
+npm install pg
+
+# Install bcrypt for password hashing
+npm install bcrypt
+
+# Install jsonwebtoken for handling JWT (JSON Web Tokens) authentication
+npm install jsonwebtoken
+
+# Install passport for authentication middleware
+npm install passport
+
+# Install passport-jwt for using JWT strategy with Passport
+npm install passport-jwt
+
+# Install chai and chai-http for writing tests
+npm install chai chai-http
+
+# Install mocha as a test framework
+npm install mocha
+
+# Install dotenv for environment variable management
+npm install dotenv
+
+# Install express-rate-limit for rate limiting middleware
+npm install express-rate-limit
+
+# Install sequelize-auto for automatic generation of Sequelize models from your database
+npm install sequelize-auto

@@ -1,0 +1,2231 @@
+{
+	"info": {
+		"_postman_id": "6c7a10d2-454b-414d-9258-f935441c639f",
+		"name": "speer_note_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21066659"
+	},
+	"item": [
+		{
+			"name": "Authentication Endpoints",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Jayy\",\n  \"password\": \"a123456\",\n  \"email\":\"j@gmail.com\",\n  \"first_name\":\"Jojo\",\n  \"last_name\":\"Ofili\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/signup",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						},
+						"description": "Create a new user account"
+					},
+					"response": [
+						{
+							"name": "email validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Jayy\",\n  \"password\": \"a1256\",\n  \"email\":\"jgmail.com\",\n  \"first_name\":\"Jojo\",\n  \"last_name\":\"Ofili\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:30:01 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275061"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "78"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e-o5LhIhYoKqAK31cgdO52OoZJEwI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"errors\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"Invalid email address.\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "password validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Jayy3\",\n  \"password\": \"a2\",\n  \"email\":\"j3@gmail.com\",\n  \"first_name\":\"Jojo\",\n  \"last_name\":\"Ofili\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:33:29 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275310"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-G7S7wTtCFbnf0NubHy90a7wtFYY\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"errors\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be between 6 and 100 characters.\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "username validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Ja\",\n  \"password\": \"a123456\",\n  \"email\":\"j3@gmail.com\",\n  \"first_name\":\"Jojo\",\n  \"last_name\":\"Ofili\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:33:49 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275310"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"68-+DURA6m6GUTn/eFIfbt0NIqS6K4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"errors\": [\n        {\n            \"field\": \"username\",\n            \"message\": \"Username must be between 3 and 30 characters.\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Signup Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Jayy3\",\n  \"password\": \"a123456\",\n  \"email\":\"j3@gmail.com\",\n  \"first_name\":\"Jojo\",\n  \"last_name\":\"Ofili\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:48:58 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276239"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-V5hwKjx5vvnyCLvj3QMCCf7LR3w\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"User created successfully\",\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"Jayy3\",\n        \"password\": \"$2b$10$KDlNSLu2YV7j8h.fJQPRJ.fwEKCMV6X8axKl/LLBGw5J47f.jgM9i\",\n        \"email\": \"j3@gmail.com\",\n        \"first_name\": \"Jojo\",\n        \"last_name\": \"Ofili\",\n        \"updatedAt\": \"2024-01-03T09:48:58.836Z\",\n        \"createdAt\": \"2024-01-03T09:48:58.836Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Jayy3\",\n  \"password\": \"a123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Log in to an existing user account and receive an access token"
+					},
+					"response": [
+						{
+							"name": "Invalid password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"jayy\",\n  \"password\": \"a2345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:34:37 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275310"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-GJiK7iNeF4rB9ZHQ1xv1N69lOMk\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Invalid username or password\"\n}"
+						},
+						{
+							"name": "Login Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Jayy3\",\n  \"password\": \"a123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:39:00 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275641"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-LS0acK2gCL6dSX9HaYkaM4zWUmk\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzQ3NDAsImV4cCI6MTcwNDI3ODM0MH0.1IYX1GshKX7f8NjbObUnLxm5zS9gcx3LK77tqsv52zM\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Note Endpoints",
+			"item": [
+				{
+					"name": "Get All Notes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eSIsImlhdCI6MTcwNDI4MDY0NCwiZXhwIjoxNzA0Mjg0MjQ0fQ.AqzJclCcY1Y5ygn9DhM3yz5JwqcpTzjQOk8Q-ZFyrS0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/notes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"notes"
+							]
+						},
+						"description": "Get a list of all notes for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "Get All Notes Empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzQ3NDAsImV4cCI6MTcwNDI3ODM0MH0.1IYX1GshKX7f8NjbObUnLxm5zS9gcx3LK77tqsv52zM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:41:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275818"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-i7BX25thpWwI/CaUc72JoIaPacM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"notes\": []\n}"
+						},
+						{
+							"name": "unauthorised",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzQ3NDAsImV4cCI6MTcwNDI3ODM0MH0.1IYX1GshKX7f8NjbObUnLxm5zS9gcx3LK77tqsv52zM",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:42:08 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275818"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-G96coCMoQYBsvZQp50gpXDGeSSE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Unauthorized Access\"\n}"
+						},
+						{
+							"name": "Get All Notes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:51:13 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-sK4x4P64Ru1FAFi05Ov8NeMKv+k\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"notes\": [\n        {\n            \"id\": 1,\n            \"title\": \"New Note from me to you\",\n            \"content\": \"The beginning of my Speer Journey!\",\n            \"user_id\": 1,\n            \"createdAt\": \"2024-01-03T09:50:31.132Z\",\n            \"updatedAt\": \"2024-01-03T09:50:31.132Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "shared notes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eSIsImlhdCI6MTcwNDI4MDY0NCwiZXhwIjoxNzA0Mjg0MjQ0fQ.AqzJclCcY1Y5ygn9DhM3yz5JwqcpTzjQOk8Q-ZFyrS0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 11:31:21 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704282382"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"150-v0uFM+6XRVZGbqoWJIIUPs5Oz2s\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"notes\": [],\n    \"shareNotes\": [\n        {\n            \"id\": 1,\n            \"title\": \"New Note from me to you\",\n            \"content\": \"The beginning of my Speer Journey!\",\n            \"user_id\": 2,\n            \"createdAt\": \"2024-01-03T11:15:56.999Z\",\n            \"updatedAt\": \"2024-01-03T11:15:56.999Z\",\n            \"NoteUser\": {\n                \"note_id\": 1,\n                \"user_id\": 1,\n                \"createdAt\": \"2024-01-03T11:16:08.467Z\",\n                \"updatedAt\": \"2024-01-03T11:16:08.467Z\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Note by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/notes/:note_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								":note_id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "note_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get a note by ID for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzQ3NDAsImV4cCI6MTcwNDI3ODM0MH0.1IYX1GshKX7f8NjbObUnLxm5zS9gcx3LK77tqsv52zM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:43:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275818"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-xk8zbTzgydbI8EFCe1xtw+Nt8Ss\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Note not found\"\n}"
+						},
+						{
+							"name": "Get Note by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:51:50 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ca-I4kLYLdySabfHkTUYaUQjSQ+ToI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"note\": {\n        \"id\": 1,\n        \"title\": \"New Note from me to you\",\n        \"content\": \"The beginning of my Speer Journey!\",\n        \"user_id\": 1,\n        \"createdAt\": \"2024-01-03T09:50:31.132Z\",\n        \"updatedAt\": \"2024-01-03T09:50:31.132Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Note",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyODA1NDYsImV4cCI6MTcwNDI4NDE0Nn0.nCl-IZZR-EkvZJ_3XnCPuVP3G_QyzZeaE35OukPMM54",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"New Note from me to you\",\n  \"content\": \"The beginning of my Speer Journey!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/notes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"notes"
+							]
+						},
+						"description": "Create a new note for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "Unauthorised",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzQ3NDAsImV4cCI6MTcwNDI3ODM0MH0.1IYX1GshKX7f8NjbObUnLxm5zS9gcx3LK77tqsv52zM",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"New Note from me to you\",\n  \"content\": \"The beginning of my Speer Journey!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:43:56 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704275818"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-G96coCMoQYBsvZQp50gpXDGeSSE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Unauthorized Access\"\n}"
+						},
+						{
+							"name": "Title and content validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzQ3NDAsImV4cCI6MTcwNDI3ODM0MH0.1IYX1GshKX7f8NjbObUnLxm5zS9gcx3LK77tqsv52zM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"New Note from me to you\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:45:01 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276002"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-IhJAa9FFJVnjvzHOnEhKMuT9ecs\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Title and content are required\"\n}"
+						},
+						{
+							"name": "Create Note Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"New Note from me to you\",\n  \"content\": \"The beginning of my Speer Journey!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:50:31 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-84WjQkDr8NryjN063dT78S8vrqU\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"newNote\": {\n        \"id\": 1,\n        \"title\": \"New Note from me to you\",\n        \"content\": \"The beginning of my Speer Journey!\",\n        \"user_id\": 1,\n        \"updatedAt\": \"2024-01-03T09:50:31.132Z\",\n        \"createdAt\": \"2024-01-03T09:50:31.132Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Note by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"content\": \"Updated content\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/notes/:note_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								":note_id"
+							],
+							"variable": [
+								{
+									"key": "note_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Update an existing note by ID for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "unauthorised",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"content\": \"Updated content\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id"
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "94"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:52:44 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-G96coCMoQYBsvZQp50gpXDGeSSE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Unauthorized Access\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"content\": \"Updated content\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id"
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "93"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:53:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-U115np3D0JkEAWECESEdaZg5++8\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Note updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Note by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/notes/:note_id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								":note_id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "note_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Delete a note by ID for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "unauthorised",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "92"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:53:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-G96coCMoQYBsvZQp50gpXDGeSSE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Unauthorized Access\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Share Note",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyODA1NDYsImV4cCI6MTcwNDI4NDE0Nn0.nCl-IZZR-EkvZJ_3XnCPuVP3G_QyzZeaE35OukPMM54",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Jayy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/notes/:note_id/share",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								":note_id",
+								"share"
+							],
+							"variable": [
+								{
+									"key": "note_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Share a note with another user for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "unauthorised",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"jayy\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id/share",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id",
+										"share"
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "90"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 09:55:20 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276332"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-G96coCMoQYBsvZQp50gpXDGeSSE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Unauthorized Access\"\n}"
+						},
+						{
+							"name": "user not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyNzUzNzUsImV4cCI6MTcwNDI3ODk3NX0.1f97Lan9Iji96MwYJLe7CoaF6Q5--U8ylXHpJs9FGGM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Jayy\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id/share",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id",
+										"share"
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 10:00:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704276908"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-vUN0RA12gcKm64DiyL9ilMfMvK4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"User not found\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyODA1NDYsImV4cCI6MTcwNDI4NDE0Nn0.nCl-IZZR-EkvZJ_3XnCPuVP3G_QyzZeaE35OukPMM54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Jayy\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/notes/:note_id/share",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										":note_id",
+										"share"
+									],
+									"variable": [
+										{
+											"key": "note_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 11:16:53 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704281514"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-k1+orgPuM9ft2V9FjEsz3CkniCk\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Note shared successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Search Endpoint",
+			"item": [
+				{
+					"name": "Search Notes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyODA1NDYsImV4cCI6MTcwNDI4NDE0Nn0.nCl-IZZR-EkvZJ_3XnCPuVP3G_QyzZeaE35OukPMM54",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/search?q=from me to you",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "from me to you"
+								}
+							]
+						},
+						"description": "Search for notes based on keywords for the authenticated user"
+					},
+					"response": [
+						{
+							"name": "unauthorised",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/search?q=dawn",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"search"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "dawn"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 11:39:55 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704282848"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-G96coCMoQYBsvZQp50gpXDGeSSE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Unauthorized Access\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiSmF5eTMiLCJpYXQiOjE3MDQyODA1NDYsImV4cCI6MTcwNDI4NDE0Nn0.nCl-IZZR-EkvZJ_3XnCPuVP3G_QyzZeaE35OukPMM54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/api/search?q=from me to you",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"search"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "from me to you"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jan 2024 11:41:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1704282976"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-7HOWtwzgBpw+4z1s5DmMZqFKTK0\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"notes\": [\n        {\n            \"id\": 1,\n            \"title\": \"New Note from me to you\",\n            \"content\": \"The beginning of my Speer Journey!\",\n            \"user_id\": 2,\n            \"createdAt\": \"2024-01-03T11:15:56.999Z\",\n            \"updatedAt\": \"2024-01-03T11:15:56.999Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
