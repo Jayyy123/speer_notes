@@ -48,10 +48,15 @@ Run migrations and seed data if needed:
 
 ## Choice of Technologies
 
-We've carefully selected the following technologies to power our project:
+I've carefully selected the following technologies to power our project:
 
 - **Express.js:** Lightweight, flexible, and widely used for building APIs.
 - **PostgreSQL:** Robust relational database.
 - **Passport.js:** Simple and widely used for authentication.
 - **Sequelize:** Powerful ORM for PostgreSQL.
 - **Elasticsearch or PostgreSQL Full Text Search:** Efficient for keyword-based search.
+- **Mocha for Testing:** Made use of Mocha + supertest library
+
+
+## Api postman Documentation
+This can be found in the api_collection folder. It holds a postman collection which comes with examples and everything you need
