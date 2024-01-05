@@ -56,7 +56,7 @@ I've carefully selected the following technologies to power our project:
 - **Sequelize:** Powerful ORM for PostgreSQL.
 - **Elasticsearch or PostgreSQL Full Text Search:** Efficient for keyword-based search.
 - **Mocha for Testing:** Made use of Mocha + supertest library
-
+- **Other Library breakdowns for this project** You can find this in the <a href="https://github.com/Jayyy123/speer_notes/blob/main/notes.txt">Notes.txt</a> section of the root directory.
 
 ## Api postman Documentation
 This can be found in the api_collection folder. It holds a postman collection which comes with examples and everything you need
